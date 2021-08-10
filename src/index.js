@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import store from './store/store';
+// import cartStore from './store/cartStore';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    {/* <Provider cartStore={cartStore}> */}
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    {/* </Provider> */}
+  </Provider>,
   document.getElementById('root')
 );
 
