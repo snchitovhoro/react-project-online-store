@@ -3,6 +3,7 @@ import React, {useContext, useEffect, useState} from "react";
 import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
 import axios from "axios";
+import { Button } from "@material-ui/core";
 
 const  Orders = ()=>{
     const APIs = useContext(APIConfig);
@@ -78,13 +79,14 @@ const  Orders = ()=>{
                         <td>
                             {order.currentStatus != "CANCELLED" &&
                                 order.currentStatus != "SHIPPED" && order.currentStatus != "DELIVERED" && (
-                            <button
+                            <Button
                                 type="button"
-                                className="small"
+                                // className="small"
                                 onClick={() => cancelOrderHandler(order)}
+                                color="secondary" size="small" variant="contained" 
                             >
                                 Cancel
-                            </button>
+                            </Button>
                             )}
                         </td>
                     </tr>

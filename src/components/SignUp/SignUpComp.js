@@ -6,6 +6,7 @@ import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
 import {useDispatch} from "react-redux";
 import {REGISTER_SUCCESS} from "../../constants/constants";
+import { Button, MenuItem, TextField } from '@material-ui/core';
 
 
 const SignUp = (props)=>{
@@ -48,81 +49,86 @@ const SignUp = (props)=>{
                 {/* {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>} */}
                 <div>
-                    <label htmlFor="firstName">First Name</label>
-                    <input
+                    <TextField
+                    label="First Name"
                         type="text"
                         id="firstName"
                         placeholder="Enter First name"
                         required
                         onChange={(e) => setFirstName(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="LastName">Last Name</label>
-                    <input
+                    <TextField
+                    label="Last Name"
                         type="text"
                         id="LastName"
                         placeholder="Enter Last name"
                         required
                         onChange={(e) => setLastName(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="email">Email address</label>
-                    <input
+                    <TextField
+                    label="Email address"
                         type="email"
                         id="email"
                         placeholder="Enter email"
                         required
                         onChange={(e) => setEmail(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="phNumber">Phone Number</label>
-                    <input
+                    <TextField
+                    label="Phone Number"
                         type="number"
                         id="phNumber"
                         placeholder="Enter Phone Number"
                         required
                         onChange={(e) => setPhNumber(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
-                    <input
+                    <TextField
+                    label="Password"
                         type="password"
                         id="password"
                         placeholder="Enter password"
                         required
                         onChange={(e) => setPassword(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input
+                    <TextField
+                    label="Confirm Password"
                         type="password"
                         id="confirmPassword"
                         placeholder="Enter confirm password"
                         required
                         onChange={(e) => setConfirmPassword(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
 
                 <div>
-                    <label htmlFor="User type">User type</label>
 
-                    <select name="user" id="user" onChange={(e) => setUserRole(e.target.value)}>
-                        <option value=""> </option>
-                        <option value="3">Buyer</option>
-                        <option value="2">Seller</option>
-                    </select>
+                    <TextField label="User type" name="user" id="user" onChange={(e) => setUserRole(e.target.value)} select variant="outlined">
+                
+                        <MenuItem value="3">Buyer</MenuItem>
+                        <MenuItem value="2">Seller</MenuItem>
+                    </TextField>
                 </div>
 
                 <div>
                     <label />
-                    <button className="primary" type="submit">
+                    <Button color="primary" type="submit" variant="contained">
                         Register
-                    </button>
+                    </Button>
                 </div>
                 <div>
                     <label />

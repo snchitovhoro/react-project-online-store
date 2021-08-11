@@ -4,6 +4,7 @@ import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
 import axios from "axios";
 import {Link} from "react-router-dom";
+import { Button } from "@material-ui/core";
 
 const  ProductManager = ()=>{
     const APIs = useContext(APIConfig);
@@ -71,20 +72,22 @@ const  ProductManager = ()=>{
                       <td>{product.price}</td>
                       <td>
                           <Link to={"/editproduct/"+product.id} >
-                              <button
+                              <Button
                                   type="button"
-                                  className="small"
+                                //   className="small"
+                                  color="primary" size="small" variant="contained" 
                               >
                                   Edit
-                              </button>
+                              </Button>
                           </Link>
-                          <button
+                          <Button
                               type="button"
-                              className="small"
+                            //   className="small"
                               onClick={() => deleteProductHandler(product)}
+                              color="secondary" size="small" variant="contained" 
                           >
                               Delete
-                          </button>
+                          </Button>
                       </td>
                   </tr>
               ))}

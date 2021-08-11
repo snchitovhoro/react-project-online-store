@@ -7,7 +7,8 @@ import {APIHeader, UserInfo} from "../../store/AppContext";
 import store from "../../store/store";
 import {useDispatch} from "react-redux";
 import {LOGIN_FETCH_SUCCESS, SET_USER} from "../../constants/constants";
-
+import { Button } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
 export default function Login(props) {
     const APIs = useContext(APIConfig);
     const { userInfo, setUserInfo } = useContext(UserInfo);
@@ -60,30 +61,34 @@ export default function Login(props) {
                     <h1>Sign In</h1>
                 </div>
                 <div>
-                    <label htmlFor="email">Username</label>
-                    <input
+                    {/* <label htmlFor="email">Username</label> */}
+                    <TextField
+                    label="Username"
                         type="text"
                         id="email"
                         placeholder="Enter username"
                         required
                         onChange={(e) => setEmail(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
-                    <input
+                    {/* <label htmlFor="password">Password</label> */}
+                    <TextField
+                    label="Password"
                         type="password"
                         id="password"
                         placeholder="Enter password"
                         required
                         onChange={(e) => setPassword(e.target.value)}
-                    ></input>
+                        variant="outlined"
+                    ></TextField>
                 </div>
                 <div>
                     <label />
-                    <button className="primary" type="submit">
+                    <Button color="secondary" size="large" variant="contained" type="submit">
                         Sign In
-                    </button>
+                    </Button>
                 </div>
                 <div>
                     <label />

@@ -3,6 +3,11 @@ import {APIConfig} from "../../store/API-Config";
 import axios from "axios";
 import store from "../../store/store";
 import {Link} from "react-router-dom";
+import { Button } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const EditProduct = (props) =>{
     const APIs = useContext(APIConfig);
@@ -76,92 +81,98 @@ const EditProduct = (props) =>{
                   <h1>Edit Product</h1>
               </div>
               <div>
-                  <label htmlFor="productName">Product Name</label>
-                  <input
+                  <TextField
+                  label="Product Name"
                       type="text"
                       id="productName"
                       placeholder="Enter Product name"
                       required
                       onChange={(e) => setProductName(e.target.value)}
                       defaultValue={product.productName}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
               <div>
-                  <label htmlFor="producer">Producer</label>
-                  <input
+                  <TextField
+                  label="Producer"
                       type="text"
                       id="producer"
                       placeholder="Enter Producer"
                       required
                       onChange={(e) => setProducer(e.target.value)}
                       defaultValue={product.producer}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
               <div>
-                  <label htmlFor="Size">Size</label>
-                  <input
+                  <TextField
+                  label="Size"
                       type="text"
                       id="Size"
                       placeholder="Enter Size"
                       required
                       onChange={(e) => setSize(e.target.value)}
                       defaultValue={product.size}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
               <div>
-                  <label htmlFor="color">Color</label>
-                  <input
+                  <TextField
+                  label="Color"
                       type="text"
                       id="color"
                       placeholder="Enter color"
                       required
                       onChange={(e) => setColor(e.target.value)}
                       defaultValue={product.color}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
               <div>
-                  <label htmlFor="price">Price</label>
-                  <input
+                  <TextField
+                  label="Price"
                       type="number"
                       id="price"
                       placeholder="Enter Price"
                       required
                       onChange={(e) => setPrice(e.target.value)}
                       defaultValue={product.price}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
               <div>
-                  <label htmlFor="quantityInStock">Quantity In Stock</label>
-                  <input
+                  <TextField
+                  label="Quantity In Stock"
                       type="number"
                       id="quantityInStock"
                       placeholder="Enter Quantity In Stock"
                       required
                       onChange={(e) => setQuantityInStock(e.target.value)}
                       defaultValue={product.quantityInStock}
-                  ></input>
+                      variant="outlined"
+                  ></TextField>
               </div>
 
               <div>
-                  <label htmlFor="Category">Category</label>
 
-                  <select name="Category" id="Category" defaultValue={product.category.id} onChange={(e) => setCategory(e.target.value)}>
-                      <option value=""> </option>
-                      <option value="1">Electronics Items</option>
-                      <option value="2">Food Items</option>
-                      <option value="3">Fashion Items</option>
-                      <option value="4">Toys Items</option>
-                      <option value="5">Furniture Items</option>
-                  </select>
+                  <TextField name="Category" id="Category" variant="outlined"
+            select label="Category" defaultValue={product.category.id} onChange={(e) => setCategory(e.target.value)}>
+                
+                      <MenuItem value="1">Electronics Items</MenuItem>
+                      <MenuItem value="2">Food Items</MenuItem>
+                      <MenuItem value="3">Fashion Items</MenuItem>
+                      <MenuItem value="4">Toys Items</MenuItem>
+                      <MenuItem value="5">Furniture Items</MenuItem>
+                  </TextField>
               </div>
               <Link to="/productlist/seller">
-                  <button className="primary" >
+                  <button color="secondary" size="large" variant="contained" >
                       Cancel
                   </button>
               </Link>
-              <button className="primary" type="submit">
+              <Button color="primary" size="large" variant="contained" type="submit">
                   Update
-              </button>
+              </Button>
           </form>
           )}
       </div>

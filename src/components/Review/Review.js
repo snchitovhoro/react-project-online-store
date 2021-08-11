@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import { APIConfig } from "../../store/API-Config";
 import store from "../../store/store";
 import axios from "axios";
+import { Button, TextareaAutosize } from "@material-ui/core";
 
 const Review = (props) => {
     const APIs = useContext(APIConfig);
@@ -68,12 +69,12 @@ const Review = (props) => {
                 ? 
                     <div>
                         {!showReviewForm &&
-                        <button onClick={onLeaveReviewHandler} className="btn btn-success" href="">Leave a Review</button>}
+                        <Button onClick={onLeaveReviewHandler} className="btn btn-success" size="large" variant="contained" href="">Leave a Review</Button>}
 
                         {showReviewForm &&
                         <form> 
-                            <p> <textarea ref = {contentRef} rows="5" cols="70" name="status"></textarea></p> 
-                            <p><button onClick={onSubmitHandler}>Submit</button></p>
+                            <p> <TextareaAutosize ref = {contentRef} rows="5" cols="70" name="status" variant="outlined"></TextareaAutosize></p> 
+                            <p><Button onClick={onSubmitHandler} color="primary" size="large" variant="contained">Submit</Button></p>
                         </form>}
                     </div>
                 :
