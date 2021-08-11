@@ -1,6 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
-import {SET_USER} from "../../constants/constants";
 import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
 

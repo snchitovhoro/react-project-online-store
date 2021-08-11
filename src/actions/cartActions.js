@@ -7,11 +7,10 @@ import {
   CART_SAVE_PAYMENT_METHOD,
   CART_ADD_ITEM_FAIL,
 } from '../constants/constants';
-// import { APIConfig } from '../store/API-Config';
+
 
 export const addToCart = (productId, qty) => async (dispatch, getState) => {
-  // const APIs = useContext(APIConfig);
-  // const productAPI = APIs.productAPI;
+ 
   const { data } = await Axios.get(`http://localhost:8080/api/products` + '/' + productId);
   const {
     cart: { cartItems },

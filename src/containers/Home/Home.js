@@ -1,7 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Product from '../../components/Product/Product';
-//import { useDispatch, useSelector } from 'react-redux';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import Product from '../../components/Product/Products';
 import axios from 'axios';
 import { APIConfig } from '../../store/API-Config';
 import store from "../../store/store";

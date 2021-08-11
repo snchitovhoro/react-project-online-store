@@ -1,6 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
 import { Redirect, Route } from 'react-router-dom';
+import React from 'react';
 import store from "../store/store";
 
 export default function SellerRoute({ component: Component, ...rest }) {
