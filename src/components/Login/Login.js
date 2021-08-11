@@ -60,11 +60,11 @@ export default function Login(props) {
                     <h1>Sign In</h1>
                 </div>
                 <div>
-                    <label htmlFor="email">Email address</label>
+                    <label htmlFor="email">Username</label>
                     <input
-                        type="email"
+                        type="text"
                         id="email"
-                        placeholder="Enter email"
+                        placeholder="Enter username"
                         required
                         onChange={(e) => setEmail(e.target.value)}
                     ></input>

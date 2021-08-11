@@ -24,7 +24,7 @@ const  Profile = () =>{
 
 
 
-const loadData = ()=>{
+const loadCurrentData = ()=>{
     axios(APIs.userAPI + "/current",{headers})
         .then(response=>{
             const info = JSON.stringify(response.data);
@@ -43,11 +43,11 @@ const loadData = ()=>{
 }
 
 useEffect(()=>{
-    loadData();
+    loadCurrentData();
 
 },[]);
 
-    const submitHandler = (e) => {
+    const submitUserprofileHandler = (e) => {
         e.preventDefault();
         // dispatch update profile
         if (password !== confirmPassword) {
@@ -80,7 +80,7 @@ useEffect(()=>{
     return (
 
         <div>
-            <form className="form" onSubmit={submitHandler}>
+            <form className="form" onSubmit={submitUserprofileHandler}>
 
                 <div>
                     <h1>User Profile</h1>

@@ -17,7 +17,7 @@ const OrderManager = ()=>{
         axios(APIs.sellerAPI + "/" + order.id+ "/shipped", {headers})
             .then(response => {
                 if(response.data === true){
-                    loadData();
+                    loadMySellerInfoData();
                 }
             }).catch(error => {
             alert(error.message);
@@ -29,7 +29,7 @@ const OrderManager = ()=>{
             .then(response => {
                 if(response.data === true){
                     order.currentStatus = "CANCELLED";
-                    loadData();
+                    loadMySellerInfoData();
                 }
             }).catch(error => {
             alert(error.message);
@@ -47,7 +47,7 @@ const OrderManager = ()=>{
         })
     };
 
-    const loadData = ()=>{
+    const loadMySellerInfoData = ()=>{
         axios(APIs.userAPI + "/mysellerinfo",{headers})
             .then(response =>{
                 axios(APIs.sellerAPI + "/" + response.data.id + "/orders"  ,{headers})
@@ -63,7 +63,7 @@ const OrderManager = ()=>{
 
     }
     useEffect(()=>{
-        loadData();
+        loadMySellerInfoData();
     },[]);
     return (
       <div>
