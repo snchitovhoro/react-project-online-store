@@ -52,13 +52,14 @@ const  Orders = ()=>{
     return (
         <div>
             <h1>List Of Orders</h1>
-            <button
+            <Button
                 type="button"
-                className="small"
+                // className="small"
                 onClick={() => pdfExportHandler()}
+                color="secondary" size="small" variant="contained"
             >
                 Download PDF
-            </button>
+            </Button>
             <table className="table">
                 <thead>
                 <tr>

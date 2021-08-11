@@ -3,6 +3,7 @@ import axios from 'axios';
 import { APIConfig } from '../../store/API-Config';
 import { Link } from 'react-router-dom';
 import Review from '../../components/Review/Review';
+import { Button, MenuItem, Select, TextField } from '@material-ui/core';
 
 export default function Products(props) {
     const APIs = useContext(APIConfig);
@@ -105,28 +106,34 @@ export default function Products(props) {
                         <div className="row">
                           <div>Qty</div>
                           <div>
-                            <select
+                            <TextField
+                            label="Qty"
                               value={qty}
                               onChange={(e) => setQty(e.target.value)}
+                              variant="outlined"
+                              select
                             >
                               {[...Array(product.quantityInStock).keys()].map(
                                 (x) => (
-                                  <option key={x + 1} value={x + 1}>
+                                  <MenuItem key={x + 1} value={x + 1}>
                                     {x + 1}
-                                  </option>
+                                  </MenuItem>
                                 )
                               )}
-                            </select>
+                            </TextField>
                           </div>
                         </div>
                       </li>
                       <li>
-                        <button
+                        <Button
                           onClick={addToCartHandler}
-                          className="primary block"
+                          // className="primary block"
+                          color="primary"
+                          variant="contained"
+                          size="large"
                         >
                           Add to Cart
-                        </button>
+                        </Button>
                       </li>
                     </>
                   )}

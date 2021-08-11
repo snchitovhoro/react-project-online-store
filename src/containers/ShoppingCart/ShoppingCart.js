@@ -5,6 +5,7 @@ import { addToCart, removeFromCart } from '../../actions/cartActions';
 import axios from 'axios';
 import { APIConfig } from '../../store/API-Config';
 import store from "../../store/store";
+import { Button } from '@material-ui/core';
 
 
 export default function ShoppingCart(props) {
@@ -65,7 +66,7 @@ export default function ShoppingCart(props) {
                 <div>qty:{qty}</div>
             <div>
 
-                        <Link to="/">Delete</Link>
+                        <Link to="/" color="primary">Delete</Link>
                     </div>
                     </div>
         </div>
@@ -78,13 +79,14 @@ export default function ShoppingCart(props) {
                 </h2>
                 </li>
                 <li>
-                <button
+                <Button
                     type="button"
                     onClick={checkoutHandler}
-                    className="primary block"
+                 
+                    color="primary" size="large" variant="contained" 
                 >
                     Proceed to Checkout
-                </button>
+                </Button>
                 </li>
             </ul>
             </div>
