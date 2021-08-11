@@ -147,11 +147,11 @@ const EditProduct = (props) =>{
 
                   <select name="Category" id="Category" defaultValue={product.category.id} onChange={(e) => setCategory(e.target.value)}>
                       <option value=""> </option>
-                      <option value="1">Fashion</option>
-                      <option value="2">Toys</option>
-                      <option value="3">Electronics</option>
-                      <option value="4">Food</option>
-                      <option value="5">Furniture</option>
+                      <option value="1">Electronics Items</option>
+                      <option value="2">Food Items</option>
+                      <option value="3">Fashion Items</option>
+                      <option value="4">Toys Items</option>
+                      <option value="5">Furniture Items</option>
                   </select>
               </div>
               <Link to="/productlist/seller">
@@ -162,8 +162,6 @@ const EditProduct = (props) =>{
               <button className="primary" type="submit">
                   Update
               </button>
-
-
           </form>
           )}
       </div>

@@ -4,20 +4,20 @@ import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route, Link, Redirect, BrowserRouter} from "react-router-dom";
 import Login from "./components/Login/Login";
-import SignUp from "./components/SignUp/SignUp";
+import SignUp from "./components/SignUp/SignUpComp";
 import {APIConfig} from "./store/API-Config";
 import Home from "./containers/Home/Home";
 import {UserInfo} from "./store/AppContext";
 import store from "./store/store";
 import {LOGOUT, SET_USER} from "./constants/constants";
 import Approval from "./components/Approval/Approval";
-import ProductManager from "./components/ProductManager/ProductManager";
+import ProductManager from "./components/ProductManager/ProductManagerComp";
 import Products from './containers/Products/Products';
 import ProductReview from "./components/ProductReview/ProductReview";
 import OrderManager from "./components/Seller/OrderManager";
 import Orders from "./components/Orders/Orders";
 import Profile from "./components/Profile/Profile";
-import AddProduct from "./components/AddProduct/AddProduct";
+import AddProduct from "./components/AddProduct/AddProducts";
 import EditProduct from "./components/EditProduct/EditProduct";
 import ShoppingCart from './containers/ShoppingCart/ShoppingCart';
 
@@ -72,9 +72,6 @@ function App() {
                     {userInfo && userInfo.isBuyer && (
                   <Link to="/cart">
                     Cart
-                    {/*{cartItems.length > 0 && (*/}
-                    {/*    <span className="badge">{cartItems.length}</span>*/}
-                    {/*)}*/}
                   </Link>
                   )}
 

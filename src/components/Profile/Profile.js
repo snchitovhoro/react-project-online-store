@@ -5,6 +5,8 @@ import {APIConfig} from "../../store/API-Config";
 import {SET_USER} from "../../constants/constants";
 import {useDispatch} from "react-redux";
 
+
+
 const  Profile = () =>{
     const APIs = useContext(APIConfig);
     const [firstName, setFirstName] = useState('');
@@ -20,29 +22,30 @@ const  Profile = () =>{
         'Authorization': 'Bearer ' + state.oAuthToken,
     }
 
-    const loadData = ()=>{
-        axios(APIs.userAPI + "/current",{headers})
-            .then(response=>{
-                const info = JSON.stringify(response.data);
-                dispatch({
-                    type: SET_USER,
-                    payload: info
-                })
-                setUserInfo(state.userInfo);
-                setFirstName(state.userInfo.firstName);
-                setLastName(state.userInfo.lastName);
-                setPhNumber(state.userInfo.phoneNumber);
 
-            }).catch(error => {
-            alert(error.message);
-        })
-    }
 
-    useEffect(()=>{
-        loadData();
+const loadData = ()=>{
+    axios(APIs.userAPI + "/current",{headers})
+        .then(response=>{
+            const info = JSON.stringify(response.data);
+            dispatch({
+                type: SET_USER,
+                payload: info
+            })
+            setUserInfo(state.userInfo);
+            setFirstName(state.userInfo.firstName);
+            setLastName(state.userInfo.lastName);
+            setPhNumber(state.userInfo.phoneNumber);
 
-    },[]);
+        }).catch(error => {
+        alert(error.message);
+    })
+}
 
+useEffect(()=>{
+    loadData();
+
+},[]);
 
     const submitHandler = (e) => {
         e.preventDefault();
