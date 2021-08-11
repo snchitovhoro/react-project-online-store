@@ -4,6 +4,7 @@ import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
 import axios from "axios";
 import {REVIEW_API} from "../../constants/constants";
+import { Button } from "@material-ui/core";
 
 const  ProductReview = ()=>{
     const APIs = useContext(APIConfig);
@@ -57,13 +58,14 @@ const  ProductReview = ()=>{
                       <td>{review.content}</td>
                       <td>
                           {!review.approved && (
-                              <button
+                              <Button
                                   type="button"
-                                  className="small"
+                                //   className="small"
                                   onClick={() => approveReviewHandler(review)}
+                                  color="secondary" size="small" variant="contained" 
                               >
                                   Approve
-                              </button>
+                              </Button>
                           ) }
                       </td>
                   </tr>

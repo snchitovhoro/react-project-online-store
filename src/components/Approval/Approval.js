@@ -2,6 +2,11 @@ import React, {useContext, useEffect, useState} from 'react';
 import axios from "axios";
 import {APIConfig} from "../../store/API-Config";
 import store from "../../store/store";
+import { Button } from "@material-ui/core";
+import TextField from "@material-ui/core/TextField";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from "@material-ui/core/InputLabel";
 
 const Approval = (props)=>{
     const APIs = useContext(APIConfig);
@@ -53,13 +58,14 @@ return (
                    <td>{seller.user.firstName} {seller.user.lastName}</td>
                    <td>
                        {!seller.approved && (
-                           <button
+                           <Button
                                type="button"
-                               className="small"
+                               size="small"
+                               color="primary" variant="contained"
                                onClick={() => approveHandler(seller)}
                            >
                                Approve
-                           </button>
+                           </Button>
                        ) }
                    </td>
                </tr>

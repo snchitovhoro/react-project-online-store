@@ -4,6 +4,7 @@ import axios from "axios";
 import {APIConfig} from "../../store/API-Config";
 import {SET_USER} from "../../constants/constants";
 import {useDispatch} from "react-redux";
+import { Button, TextField } from "@material-ui/core";
 
 
 
@@ -88,60 +89,63 @@ useEffect(()=>{
                 {userInfo && (
                 <div className="form" >
                     <div>
-                        <label htmlFor="firstName">First Name</label>
-                        <input
+                        <TextField
+                        label="First Name"
                             type="text"
                             id="firstName"
                             placeholder="Enter First name"
                             required
                             onChange={(e) => setFirstName(e.target.value)}
-                            defaultValue={userInfo.firstName}/>
+                            defaultValue={userInfo.firstName} variant="outlined"/>
                     </div>
                     <div>
-                    <label htmlFor="LastName">Last Name</label>
-                    <input
+                    <TextField
+                    label="Last Name"
                     type="text"
                     id="LastName"
                     placeholder="Enter Last name"
                     required
                     onChange={(e) => setLastName(e.target.value)}
-                    defaultValue={userInfo.lastName}/>
+                    defaultValue={userInfo.lastName} variant="outlined"/>
                     </div>
                     <div>
-                    <label htmlFor="phNumber">Phone Number</label>
-                    <input
+                    <TextField
+                    label="Phone Number"
                     type="number"
                     id="phNumber"
                     placeholder="Enter Phone Number"
                     defaultValue={userInfo.phoneNumber}
                     required
-                    onChange={(e) => setPhNumber(e.target.value)}>
-                    </input>
+                    onChange={(e) => setPhNumber(e.target.value)} variant="outlined">
+                        
+                    </TextField>
                     </div>
                     <div>
-                    <label htmlFor="password">Password</label>
-                    <input
+                    <TextField
+                    label="Password"
                     id="password"
                     type="password"
                     placeholder="Enter password"
                     onChange={(e) => setPassword(e.target.value)}
-                    ></input>
+                    variant="outlined"
+                    ></TextField>
                     </div>
                     <div>
-                    <label htmlFor="confirmPassword">confirm Password</label>
-                    <input
+                    <TextField
+                    label="Confirm Password"
                     id="confirmPassword"
                     type="password"
                     placeholder="Enter confirm password"
                     onChange={(e) => setConfirmPassword(e.target.value)}
-                    ></input>
+                    variant="outlined"
+                    ></TextField>
                     </div>
 
                     <div>
                     <label />
-                    <button className="primary" type="submit">
+                    <Button color="primary" type="submit" size="large" variant="contained" >
                     Update
-                    </button>
+                    </Button>
                     </div>
                 </div>
                 )}
