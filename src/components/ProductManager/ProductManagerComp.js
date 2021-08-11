@@ -13,18 +13,18 @@ const  ProductManager = ()=>{
         'Access-Control-Allow-Origin': '*',
         'Authorization': 'Bearer ' + state.oAuthToken,
     }
-    const deleteHandler = (product) => {
+    const deleteProductHandler = (product) => {
         axios.delete(APIs.productAPI + "/" + product.id , {headers})
             .then(response => {
                 if(response.data === true){
-                    loadData();
+                    loadSellerData();
                 }
             }).catch(error => {
                 alert("Can not delete product!");
         })
     };
 
-    const loadData = ()=>{
+    const loadSellerData = ()=>{
         axios(APIs.userAPI + "/mysellerinfo",{headers})
             .then(response =>{
                 axios(APIs.sellerAPI + "/" + response.data.id + "/products"  ,{headers})
@@ -40,7 +40,7 @@ const  ProductManager = ()=>{
 
     }
     useEffect(()=>{
-        loadData();
+        loadSellerData();
     },[]);
     return (
       <div>
@@ -81,7 +81,7 @@ const  ProductManager = ()=>{
                           <button
                               type="button"
                               className="small"
-                              onClick={() => deleteHandler(product)}
+                              onClick={() => deleteProductHandler(product)}
                           >
                               Delete
                           </button>

@@ -13,19 +13,19 @@ const  ProductReview = ()=>{
         'Access-Control-Allow-Origin': '*',
         'Authorization': 'Bearer ' + state.oAuthToken,
     }
-    const approveHandler = (review) => {
+    const approveReviewHandler = (review) => {
         axios(REVIEW_API + '/' + review.id + "/approve", {headers})
             .then(response => {
                 if(response.data === true){
                     review.approved = true;
-                    loadData();
+                    loadNotapprovedData();
                 }
             }).catch(error => {
                 alert(error.message);
         })
     };
 
-    const loadData = ()=>{
+    const loadNotapprovedData = ()=>{
         axios(REVIEW_API + "/notapproved",{headers})
             .then(response=>{
                 setReviews(response.data);
@@ -35,7 +35,7 @@ const  ProductReview = ()=>{
         })
     }
     useEffect(()=>{
-        loadData();
+        loadNotapprovedData();
     },[]);
     return (
       <div>
@@ -60,7 +60,7 @@ const  ProductReview = ()=>{
                               <button
                                   type="button"
                                   className="small"
-                                  onClick={() => approveHandler(review)}
+                                  onClick={() => approveReviewHandler(review)}
                               >
                                   Approve
                               </button>

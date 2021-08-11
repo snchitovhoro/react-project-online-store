@@ -11,7 +11,7 @@ const Review = (props) => {
     const [showReviewForm, setShowReviewForm] = useState(false);
     const contentRef = useRef(null);
 
-    const loadData = () => {
+    const loadReviewData = () => {
         axios(APIs.productAPI + "/" + props.productId + "/reviews")
             .then(response => {
                 setReviews(response.data);
@@ -21,7 +21,7 @@ const Review = (props) => {
             })
     }
     useEffect(() => {
-        loadData();       
+        loadReviewData();       
     }, []);
 
     const onLeaveReviewHandler = () =>{

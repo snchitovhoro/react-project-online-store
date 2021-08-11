@@ -16,7 +16,7 @@ export default function Products(props) {
 
 
   useEffect(() => {
-    const fecthData = async () => {
+    const fetchData = async () => {
         try {
             const { data } = await axios.get(productAPI + '/' + productId);
             setProduct(data);
@@ -31,7 +31,7 @@ export default function Products(props) {
             console.log(err);
           }
         };
-        fecthData();
+        fetchData();
       }, []);
 
   const addToCartHandler = () => {

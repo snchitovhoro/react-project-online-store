@@ -19,7 +19,7 @@ const SignUp = (props)=>{
     const [userRole, setUserRole] = useState('');
     const [phNumber, setPhNumber] = useState('');
 
-    function handleSubmit(event) {
+    function handleRegisterSubmit(event) {
         event.preventDefault();
 
         axios.post(APIs.registerAPI, {
@@ -41,7 +41,7 @@ const SignUp = (props)=>{
     return (
         <div>
 
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form" onSubmit={handleRegisterSubmit}>
                 <div>
                     <h1>Create Account</h1>
                 </div>

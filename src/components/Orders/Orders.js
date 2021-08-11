@@ -12,7 +12,7 @@ const  Orders = ()=>{
         'Access-Control-Allow-Origin': '*',
         'Authorization': 'Bearer ' + state.oAuthToken,
     }
-    const cancelHandler = (order) => {
+    const cancelOrderHandler = (order) => {
         axios(APIs.orderAPI + "/" + order.id+ "/cancel", {headers})
             .then(response => {
                 if(response.data === true){
@@ -23,7 +23,7 @@ const  Orders = ()=>{
         })
     };
 
-    const pdfHandler = () => {
+    const pdfExportHandler = () => {
         axios(APIs.orderAPI + "/export/pdf", {responseType: 'arraybuffer',headers})
             .then(response => {
                 if(response.data){
@@ -54,7 +54,7 @@ const  Orders = ()=>{
             <button
                 type="button"
                 className="small"
-                onClick={() => pdfHandler()}
+                onClick={() => pdfExportHandler()}
             >
                 Download PDF
             </button>
@@ -81,7 +81,7 @@ const  Orders = ()=>{
                             <button
                                 type="button"
                                 className="small"
-                                onClick={() => cancelHandler(order)}
+                                onClick={() => cancelOrderHandler(order)}
                             >
                                 Cancel
                             </button>

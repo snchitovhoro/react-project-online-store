@@ -22,7 +22,7 @@ export default function ShoppingCart(props) {
     const [cartItems, setCartItems] = useState([]);
     const [product, setProduct] = useState([]);
     useEffect(() => {
-        const fecthData = async () => {
+        const fetchData = async () => {
             try {
                 const { data } = await axios.get(productAPI + '/' + productId);
                 setProduct(data);
@@ -33,7 +33,7 @@ export default function ShoppingCart(props) {
                 console.log(err);
               }
             };
-            fecthData();
+            fetchData();
           }, []);
 
       const removeFromCartHandler = (id) => {
