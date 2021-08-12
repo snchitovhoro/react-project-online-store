@@ -22,11 +22,11 @@ function Footer(props) {
  
   return (
     <footer className={classes.footer} >
-      <Paper className={classes.root} elevation={1} style={{backgroundColor:"#203040"}}>
-        <Typography variant="h4" component="h2" style={{color:"white"}}>
+      <Paper className={classes.root} elevation={1} style={{backgroundColor:"#bd313a"}}>
+        <Typography variant="h4" component="h2" style={{color:"#203040"}}>
          <center>Online  shopping store</center> 
         </Typography>
-        <Typography component="p" style={{color:"white"}}>
+        <Typography component="p" style={{color:"#203040"}}>
           @2021 All right reserved
         </Typography>
       </Paper>

@@ -61,10 +61,13 @@ function App() {
         }
       }>
         <UserInfo.Provider value={{ userInfo, setUserInfo }}>
-          <BrowserRouter> 
+          <BrowserRouter>
+            <Header/>
             <div className="grid-container">
+
               <header className="row">
                 <div>
+
                   <Link className="brand" to="/">
                     Online  shopping store
                   </Link>
