@@ -20,6 +20,8 @@ import Profile from "./components/Profile/Profile";
 import AddProduct from "./components/AddProduct/AddProducts";
 import EditProduct from "./components/EditProduct/EditProduct";
 import ShoppingCart from './containers/ShoppingCart/ShoppingCart';
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 
 function App() {
@@ -59,13 +61,12 @@ function App() {
         }
       }>
         <UserInfo.Provider value={{ userInfo, setUserInfo }}>
-          <BrowserRouter>
+          <BrowserRouter> 
             <div className="grid-container">
               <header className="row">
                 <div>
-
                   <Link className="brand" to="/">
-                    Online Market
+                    Online  shopping store
                   </Link>
                 </div>
                   <div>
@@ -137,7 +138,7 @@ function App() {
                     )}
                 </div>
               </header>
-
+             
               <main>
                 <Route path="/cart" component={ShoppingCart}></Route>
                 <Route path="/newproduct" component={AddProduct}></Route>
@@ -153,9 +154,7 @@ function App() {
                 <Route path="/product/:id" component={Products} exact></Route>
                 <Route path="/" component={Home} exact></Route>
               </main>
-              <footer className="row center">
-                <div>All right reserved</div>{' '}
-              </footer>
+              <Footer />
             </div>
           </BrowserRouter>
         </UserInfo.Provider>

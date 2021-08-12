@@ -135,10 +135,10 @@ const AddProduct = () => {
             variant="outlined"
             select
           >
-            <MenuItem value="1">Fashion</MenuItem>
+            <MenuItem value="1">Food</MenuItem>
             <MenuItem value="2">Toys</MenuItem>
             <MenuItem value="3">Electronics</MenuItem>
-            <MenuItem value="4">Food</MenuItem>
+            <MenuItem value="4">Fashion</MenuItem>
             <MenuItem value="5">Furniture</MenuItem>
           </TextField >
         </div>
